@@ -1,0 +1,22 @@
+Set eth0's MAC address from uBoot's NVRAM
+=========================================
+
+This little utility will query the key `ethaddr` in uBoot's
+NVRAM segment and configure `eth0`'s MAC address accordingly.
+
+It is intended to run at startup using the included systemd service.
+
+Usage
+-----
+
+In uBoot set your desired MAC address:
+
+    setenv ethaddr de:ad:be:ef:fe:ed
+    saveenv
+
+In Linux ensure the service is enabled:
+
+    systemctl enable setmac
+
+Reboot and marvel at your new MAC address.
+

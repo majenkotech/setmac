@@ -1,0 +1,9 @@
+[Unit]
+Description=Configure eth0 MAC address from NVRAM
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/setmac
+
+[Install]
+WantedBy=network.target
